@@ -1,0 +1,6 @@
+spring:
+
+logging.level:
+  org.hibernate.orm.jdbc.bind: trace
+
+#TEST용 yml파일 없으면 main의 resources에 있는 yml사용
