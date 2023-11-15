@@ -1,5 +1,6 @@
 package jpashop.jpashop.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jpashop.jpashop.domain.Order.Order;
 import lombok.AccessLevel;
@@ -26,6 +27,7 @@ public class Member {
     private Address address;
 
     @OneToMany(mappedBy = "member")
+    @JsonIgnore
     private List<Order> orders = new ArrayList<>();
     //member가 연관 관계 주인 -> member에 있는 Order가 빠지면 member가 아니라 order가 업데이트 됨
     //order의 외래키값이 변경 -> 별도의 업데이트 쿼리발생(성능 저하),유지보수성 저하

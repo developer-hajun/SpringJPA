@@ -1,5 +1,6 @@
 package jpashop.jpashop.domain.Order;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jpashop.jpashop.domain.Delivery.Delivery;
 import jpashop.jpashop.domain.Delivery.DeliveryStatus;

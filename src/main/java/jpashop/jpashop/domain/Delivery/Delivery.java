@@ -1,5 +1,6 @@
 package jpashop.jpashop.domain.Delivery;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jpashop.jpashop.domain.Address;
 import jpashop.jpashop.domain.Order.Order;
@@ -19,6 +20,7 @@ public class Delivery {
     private Address address;
 
     @OneToOne(mappedBy = "delivery")
+    @JsonIgnore
     private Order order;
 
     @Enumerated(EnumType.STRING)

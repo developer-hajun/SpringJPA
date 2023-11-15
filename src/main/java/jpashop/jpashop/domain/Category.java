@@ -1,5 +1,6 @@
 package jpashop.jpashop.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jpashop.jpashop.domain.Item.Item;
 import lombok.Getter;
@@ -22,6 +23,7 @@ public class Category {
     @JoinTable(name = "category_item",
             joinColumns = @JoinColumn(name = "category_id"),
             inverseJoinColumns = @JoinColumn(name = "item_id"))
+    @JsonIgnore
     private List<Item> items = new ArrayList<>();
     //@ManyToMany -> 컬럼추가X , 세밀한 쿼리 실행X -> 실무 사용X
     //@OneToMany,@ManyToOne으로 중간 엔티티를 만들어 매핑
